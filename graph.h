@@ -4,7 +4,7 @@ typedef struct graphS {
     int numNodes;
     int * entrysNodes;
     listNodeS **nodesEdges;
-    int *path;
+    queueS *path;
 
 } graphS;
 

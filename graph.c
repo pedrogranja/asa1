@@ -7,7 +7,7 @@ graphS* initializeGraph(int numNodes){
 	for (int i = 0; i <= numNodes; i++){
 		graph->entrysNodes[i] = 0;
 	}
-	graph->path = (int*) malloc(numNodes * sizeof(int));
+	graph->path = createQueue();
 	graph->nodesEdges = createNodesEdges(graph->numNodes);
 
 }
