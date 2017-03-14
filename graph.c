@@ -1,15 +1,12 @@
-#include "list.h"
 #include "graph.h"
 
 graphS* initializeGraph(int numNodes){
 	graphS* graph = (graphS*) malloc(sizeof(graphS));
-	graph->entrysNodes = (int*) malloc(numNodes * sizeof(int));
-	for (int i = 0; i <= numNodes; i++){
-		graph->entrysNodes[i] = 0;
-	}
+	graph->numNodes = numNodes;
+	graph->entrysNodes = (int*) calloc(numNodes,sizeof(int));
 	graph->path = createQueue();
 	graph->nodesEdges = createNodesEdges(graph->numNodes);
-
+	return graph;
 }
 
 listNodeS **createNodesEdges(int numNodes){

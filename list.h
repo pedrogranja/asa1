@@ -1,15 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct listNodeS {
-  	int node;
-  	listNodeS *next;
-}listNodeS;
+#ifndef LIST_H_
+#define LIST_H_
 
-typedef struct queueS{
+typedef struct ListNodeS {
+  	int node;
+  	struct listNodeS *next;
+} listNodeS;
+
+typedef struct QueueS{
 	listNodeS* head;
 	listNodeS* tail;
-}queueS;
+} queueS;
 
 
 listNodeS *createListNode(int node);
@@ -18,3 +21,4 @@ void addListNode(listNodeS* nodeEdges, int node);
 void enqueue(queueS* queue, int node);
 int dequeue(queueS* queue);
 
+#endif
