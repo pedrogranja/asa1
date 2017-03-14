@@ -3,7 +3,8 @@
 graphS* initializeGraph(int numNodes){
 	graphS* graph = (graphS*) malloc(sizeof(graphS));
 	graph->numNodes = numNodes;
-	graph->entrysNodes = (int*) calloc(numNodes,sizeof(int));
+	graph->entryNodesNumber = 0;
+	graph->lastEntryNode = -1;
 	graph->path = createQueue();
 	graph->nodesEdges = createNodesEdges(graph->numNodes);
 	return graph;

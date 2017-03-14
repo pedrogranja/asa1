@@ -2,7 +2,8 @@
 
 typedef struct graphS { 
     int numNodes;
-    int * entrysNodes;
+    int entryNodesNumber;
+    int lastEntryNode;
     listNodeS **nodesEdges;
     queueS *path;
 
